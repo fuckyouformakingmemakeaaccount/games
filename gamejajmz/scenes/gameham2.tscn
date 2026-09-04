@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://02ww7bip4uxp"]
+
+[ext_resource type="Script" uid="uid://dc4whve4vhv2s" path="res://scenes/main.gd" id="1_oa4bg"]
+[ext_resource type="PackedScene" uid="uid://pgwvj3hsqem3" path="res://scenes/levels/level2.tscn" id="2_lnnxc"]
+
+[node name="platformerTest" type="Node2D" unique_id=1570688631]
+script = ExtResource("1_oa4bg")
+
+[node name="levelRoot2" parent="." unique_id=224528440 instance=ExtResource("2_lnnxc")]

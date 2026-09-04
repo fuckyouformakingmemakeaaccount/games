@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://cqktkv1u68ici"]
+
+[ext_resource type="Script" uid="uid://dipo7ygyf4ngr" path="res://player.gd" id="1_ig7tw"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_cwaoi"]
+
+[sub_resource type="Sky" id="Sky_ln3x3"]
+sky_material = SubResource("PanoramaSkyMaterial_cwaoi")
+
+[sub_resource type="Environment" id="Environment_iu0ja"]
+background_mode = 2
+background_energy_multiplier = 1.6
+sky = SubResource("Sky_ln3x3")
+ambient_light_source = 3
+ambient_light_color = Color(1, 0.5019608, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_iu0ja"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_iu0ja"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iu0ja"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_iu0ja"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0xm2m"]
+
+[node name="Main" type="Node3D" unique_id=1954574887]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2119577519]
+environment = SubResource("Environment_iu0ja")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1482182562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.177701)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1495816214]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6329265, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=432139115]
+mesh = SubResource("SphereMesh_iu0ja")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1580002525]
+shape = SubResource("SphereShape3D_iu0ja")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=414535243]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -1.0547247, 0)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=118185504]
+shape = SubResource("BoxShape3D_iu0ja")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D" unique_id=954495229]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=619656233]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 1.0897487, -1.8453865)
+script = ExtResource("1_ig7tw")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1035909693]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_iu0ja")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=2042943258]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_0xm2m")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=2003272150]
+transform = Transform3D(1, 0, 0, 0, 0.870842, 0.49156308, 0, -0.49156305, 0.87084204, 0, 1.85451, 3.7957213)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1120859588]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7547102, 0)
+light_color = Color(1, 1, 0.62352943, 1)
+light_energy = 1.627
+light_indirect_energy = 1.471
+light_volumetric_fog_energy = 11.51
+light_size = 0.667
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1553825024]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.709075, 40.470882)
+light_color = Color(1, 1, 0.88235295, 1)
+light_energy = 16.0
+spot_range = 4096.0

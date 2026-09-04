@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dddmaxpiplxe8"]
+
+[ext_resource type="Texture2D" uid="uid://b0vuowiaxknxp" path="res://images/TV colour bars.jpg" id="1_06t4h"]
+
+[node name="Main Menu" type="Node2D" unique_id=1794971943]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1700065315]
+position = Vector2(960.00006, 540.00006)
+scale = Vector2(1.4999999, 1.4999999)
+texture = ExtResource("1_06t4h")
+
+[node name="Buttons" type="Control" parent="." unique_id=1681123533]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 192.0
+offset_right = 40.0
+offset_bottom = 232.0
+metadata/_edit_group_ = true
+
+[node name="Start" type="Button" parent="Buttons" unique_id=1055398220]
+layout_mode = 0
+offset_left = 782.0
+offset_top = 345.0
+offset_right = 1125.0
+offset_bottom = 444.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Start"
+
+[node name="Options" type="Button" parent="Buttons" unique_id=1411203393]
+layout_mode = 0
+offset_left = 782.0
+offset_top = 481.0
+offset_right = 1125.0
+offset_bottom = 580.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Options"
+
+[node name="About _ Credits" type="Button" parent="Buttons" unique_id=1708243413]
+layout_mode = 0
+offset_left = 782.0
+offset_top = 617.0
+offset_right = 1125.0
+offset_bottom = 716.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "About"
+
+[node name="Quit" type="Button" parent="Buttons" unique_id=1411057656]
+layout_mode = 0
+offset_left = 782.0
+offset_top = 753.0
+offset_right = 1125.0
+offset_bottom = 852.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Quit
+"
+
+[node name="Label" type="Label" parent="." unique_id=1121078065]
+offset_left = 127.0
+offset_top = 95.0
+offset_right = 1762.0
+offset_bottom = 589.0
+theme_override_font_sizes/font_size = 260
+text = "FEMBOY RPG"
+horizontal_alignment = 1

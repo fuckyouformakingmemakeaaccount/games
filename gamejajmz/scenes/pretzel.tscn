@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bt2ls4tbdxvl1"]
+
+[ext_resource type="Texture2D" uid="uid://bx0q8fnjscw6d" path="res://sprites/golden-brown-soft-pretzel-with-coarse-salt-on-transparent-background-png-3014246721.png" id="1_aimee"]
+[ext_resource type="Script" uid="uid://cy82rnijf05hw" path="res://scenes/pretzel_body_2d.gd" id="1_mk4pe"]
+[ext_resource type="AudioStream" uid="uid://k5rvdcfwxyrt" path="res://sounds/pretzel/objects-pickup-rod-sfx-pickup-rod.mp3" id="3_bv1xy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ln3x3"]
+radius = 20.024984
+
+[node name="PretzelBody2D" type="CharacterBody2D" unique_id=1059584014]
+script = ExtResource("1_mk4pe")
+
+[node name="PretzelSprite2D" type="Sprite2D" parent="." unique_id=1159114977]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_aimee")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1815751812]
+
+[node name="PretzelCollision" type="CollisionShape2D" parent="Area2D" unique_id=1128569295]
+shape = SubResource("CircleShape2D_ln3x3")
+
+[node name="PretzelPickupSound" type="AudioStreamPlayer2D" parent="." unique_id=394884563]
+stream = ExtResource("3_bv1xy")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

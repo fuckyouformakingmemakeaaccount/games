@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://oqperlqqueyq"]
+
+[ext_resource type="FontFile" uid="uid://73qomebwhf12" path="res://fonts/last draft.otf" id="1_oo0fn"]
+[ext_resource type="PackedScene" uid="uid://bt2ls4tbdxvl1" path="res://scenes/pretzel.tscn" id="2_5ysmq"]
+[ext_resource type="Script" uid="uid://d0fxv1ijeeixm" path="res://scripts/fps_counter_label.gd" id="3_5ysmq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rarhs"]
+bg_color = Color(0.49274766, 0.19070926, 0.297913, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_detail = 1
+
+[node name="HUD" type="CanvasLayer" unique_id=1060639264]
+
+[node name="Score Panel" type="Panel" parent="." unique_id=153446726]
+offset_right = 146.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rarhs")
+metadata/_edit_group_ = true
+
+[node name="Score Label" type="Label" parent="Score Panel" unique_id=381536271]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.0
+offset_top = -6.0
+offset_right = 45.0
+offset_bottom = 33.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_oo0fn")
+theme_override_font_sizes/font_size = 36
+text = "  : 0"
+
+[node name="Pretzel" parent="Score Panel" unique_id=1059584014 instance=ExtResource("2_5ysmq")]
+position = Vector2(22, 20)
+
+[node name="FPS Counter Panel" type="Panel" parent="." unique_id=496541577]
+offset_top = 57.0
+offset_right = 146.0
+offset_bottom = 97.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rarhs")
+
+[node name="FPS Counter Label" type="Label" parent="FPS Counter Panel" unique_id=589207795]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -59.0
+offset_top = -5.0
+offset_right = 26.0
+offset_bottom = 34.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_oo0fn")
+theme_override_font_sizes/font_size = 36
+text = "FPS: 0"
+script = ExtResource("3_5ysmq")
+
+[node name="Pretzel" parent="FPS Counter Panel" unique_id=39067922 instance=ExtResource("2_5ysmq")]
+visible = false
+position = Vector2(22, 20)

@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://6aa4mbf15qip"]
+
+[ext_resource type="Texture2D" uid="uid://idvdim384xo3" path="res://icon.svg" id="1_byowd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_adgq0"]
+size = Vector2(744, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ixrbc"]
+size = Vector2(118, 128)
+
+[node name="Platforms" type="Node2D" unique_id=336067910]
+
+[node name="Platform" type="StaticBody2D" parent="." unique_id=600113516]
+position = Vector2(50, 89)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform" unique_id=164603182]
+position = Vector2(-1.5, 0)
+scale = Vector2(5.8046875, 1)
+texture = ExtResource("1_byowd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" unique_id=753311641]
+shape = SubResource("RectangleShape2D_adgq0")
+
+[node name="Platform2" type="StaticBody2D" parent="." unique_id=1530945464]
+position = Vector2(-198, -199)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform2" unique_id=507344219]
+scale = Vector2(0.92187536, 1)
+texture = ExtResource("1_byowd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2" unique_id=1165786509]
+shape = SubResource("RectangleShape2D_ixrbc")
+
+[node name="Platform3" type="StaticBody2D" parent="." unique_id=171776177]
+position = Vector2(314, -199)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform3" unique_id=129966703]
+scale = Vector2(0.92187536, 1)
+texture = ExtResource("1_byowd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3" unique_id=490193792]
+shape = SubResource("RectangleShape2D_ixrbc")
+
+[node name="Platform4" type="StaticBody2D" parent="." unique_id=76250814]
+position = Vector2(50, -391)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform4" unique_id=999028154]
+scale = Vector2(0.92187536, 1)
+texture = ExtResource("1_byowd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4" unique_id=110529573]
+shape = SubResource("RectangleShape2D_ixrbc")

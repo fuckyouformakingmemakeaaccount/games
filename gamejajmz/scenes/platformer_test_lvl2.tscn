@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cyqhg7lk6lj13"]
+
+[ext_resource type="Script" uid="uid://dc4whve4vhv2s" path="res://scenes/main.gd" id="1_2p8rw"]
+[ext_resource type="PackedScene" uid="uid://bq7rc5cdn2c87" path="res://scenes/levels/level1.tscn" id="2_vekis"]
+[ext_resource type="Texture2D" uid="uid://4iacfotqcp6r" path="res://sprites/baaaackgrounds/6c8e4d3fd4ce92f7983e6e66dda3e30f.jpeg" id="3_381w3"]
+[ext_resource type="PackedScene" uid="uid://dsjomf5br4qck" path="res://scenes/player.tscn" id="6_0qtsp"]
+
+[node name="platformerTest" type="Node2D" unique_id=1570688631]
+script = ExtResource("1_2p8rw")
+
+[node name="levelRoot" parent="." unique_id=224528440 instance=ExtResource("2_vekis")]
+
+[node name="baaackground2" type="Sprite2D" parent="levelRoot" unique_id=689329602]
+visible = false
+position = Vector2(639.99994, 512)
+scale = Vector2(1.2832997, 1.2832998)
+texture = ExtResource("3_381w3")
+
+[node name="Exit2" type="Area2D" parent="levelRoot" unique_id=409005066]
+position = Vector2(1255, 33)
+metadata/_edit_group_ = true
+
+[node name="HUD2" type="CanvasLayer" parent="levelRoot" unique_id=1757169617]
+
+[node name="Player2" parent="levelRoot" unique_id=1188899345 instance=ExtResource("6_0qtsp")]
+position = Vector2(400, 384)
+
+[node name="Pretzels2" type="Node2D" parent="levelRoot" unique_id=1908385853]
+
+[node name="Enemies2" type="Node2D" parent="levelRoot" unique_id=297957301]
