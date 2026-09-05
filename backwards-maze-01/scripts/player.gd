@@ -25,7 +25,7 @@ const maxStrafeAngle : float = 180.0
 const airStrafeModifier : float = 1.0
 var mouseSensibility = 600
 
-@export var mar_accel_base : float = 15.0
+@export var mar_accel_base : float = 4.0
 var mario_accel : float
 @export var mario_accel_decay : float = 1.0
 
@@ -77,11 +77,14 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	print("Player's input_dir: ", input_dir)
+	#print("Player's input_dir: ", input_dir)
 	
 	# Cancel player strafe
 	if input_dir.x:
 		input_dir.x = 0
+	# If player can't move forward, cancel it
+	if input_dir.y == -1:
+		input_dir.y = 0
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	#what do you want to take precedent, wallrunning or sliding?

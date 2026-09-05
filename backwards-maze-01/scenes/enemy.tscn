@@ -1,5 +1,79 @@
 [gd_scene format=3 uid="uid://c6pk18iuqlwvc"]
 
-[node name="Enemy" type="CharacterBody3D" unique_id=81967435]
+[ext_resource type="Script" uid="uid://d2e60q26rmaqu" path="res://scripts/enemy.gd" id="1_4ra3w"]
+[ext_resource type="Texture2D" uid="uid://ur5ufnw1v804" path="res://sprites/Tiny RPG Character Asset Pack 01 v2.0 -Free Soldier&Orc/Characters(100x100 split)/Orc/Orc/Orc_Idle.png" id="1_7p1mj"]
+[ext_resource type="Texture2D" uid="uid://hy1gtedp75br" path="res://sprites/krita/blit/bgplaceholder.png" id="2_md0e3"]
 
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1313666167]
+[sub_resource type="AtlasTexture" id="AtlasTexture_md0e3"]
+atlas = ExtResource("1_7p1mj")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ra3w"]
+atlas = ExtResource("1_7p1mj")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uy6h"]
+atlas = ExtResource("1_7p1mj")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4w8v"]
+atlas = ExtResource("1_7p1mj")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwavj"]
+atlas = ExtResource("1_7p1mj")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nenq2"]
+atlas = ExtResource("1_7p1mj")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iu0ja"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md0e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ra3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uy6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4w8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwavj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nenq2")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7p1mj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ra3w"]
+albedo_texture = ExtResource("2_md0e3")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_md0e3"]
+material = SubResource("StandardMaterial3D_4ra3w")
+
+[node name="Enemy" type="CharacterBody3D" unique_id=81967435]
+script = ExtResource("1_4ra3w")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=862898664]
+sprite_frames = SubResource("SpriteFrames_iu0ja")
+animation = &"idle"
+frame_progress = 0.18696372
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1979562575]
+shape = SubResource("CapsuleShape3D_7p1mj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=864205268]
+mesh = SubResource("CapsuleMesh_md0e3")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=850631597]
