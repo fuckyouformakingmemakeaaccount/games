@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://c1u73g7bt84y3"]
+
+[ext_resource type="Script" uid="uid://dgf236k7rl3xf" path="res://player.gd" id="1_f3sb7"]
+
+[sub_resource type="Environment" id="Environment_f3sb7"]
+
+[sub_resource type="Curve" id="Curve_f3sb7"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25589225, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fj7yv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tlwt5"]
+size = Vector3(30, 1, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_aqk2v"]
+size = Vector3(30, 1, 30)
+
+[node name="world" type="Node3D" unique_id=1785423514]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=946986199]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1239240156]
+environment = SubResource("Environment_f3sb7")
+
+[node name="player" type="CharacterBody3D" parent="." unique_id=1658362678]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+script = ExtResource("1_f3sb7")
+airStrafeCurve = SubResource("Curve_f3sb7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player" unique_id=553282640]
+shape = SubResource("CapsuleShape3D_fj7yv")
+
+[node name="Head" type="Node3D" parent="player" unique_id=1581854962]
+
+[node name="Camera3D" type="Camera3D" parent="player/Head" unique_id=956453265]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1742171078]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1306709874]
+shape = SubResource("BoxShape3D_tlwt5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=921537364]
+mesh = SubResource("BoxMesh_aqk2v")
