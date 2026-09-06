@@ -1,5 +1,5 @@
 extends CharacterBody3D
-
+@onready var maze_floor: MeshInstance3D = $"../EnemyNavigationRegion3D/level/Maze_Floor"
 var dbugPrints = false
 var SPEED = 5.0
 var slide_speed = 20.0
@@ -148,5 +148,5 @@ func isHit():
 			print("Player: has been hit")
 		dies()
 func dies():
-	isAlive = false
+	#isAlive = false
 	return true

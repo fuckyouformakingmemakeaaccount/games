@@ -210,6 +210,7 @@ mesh = SubResource("CapsuleMesh_md0e3")
 
 [node name="FootstepsPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=638306623]
 stream = ExtResource("6_xwavj")
+volume_db = -0.635
 autoplay = true
 
 [connection signal="animation_finished" from="AnimatedSprite3D" to="." method="_on_animated_sprite_3d_animation_finished"]
