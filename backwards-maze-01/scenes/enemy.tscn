@@ -181,7 +181,7 @@ billboard = 2
 sprite_frames = SubResource("SpriteFrames_iu0ja")
 animation = &"attack"
 autoplay = "walk"
-frame_progress = 0.17132781
+frame_progress = 0.53197837
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1979562575]
 shape = SubResource("CapsuleShape3D_7p1mj")
