@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://h3174422w576"]
+
+[ext_resource type="Script" uid="uid://dgf236k7rl3xf" path="res://scripts/player.gd" id="1_3vyb7"]
+
+[sub_resource type="Curve" id="Curve_f3sb7"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25589225, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fj7yv"]
+
+[node name="player" type="CharacterBody3D" unique_id=439686971]
+script = ExtResource("1_3vyb7")
+airStrafeCurve = SubResource("Curve_f3sb7")
+mario_accel_decay = 5.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1450140178]
+shape = SubResource("CapsuleShape3D_fj7yv")
+
+[node name="Head" type="Node3D" parent="." unique_id=1068958035]
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=638737698]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64437157, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Head/Camera3D" unique_id=1258489898]
+visible = false
+light_color = Color(1, 1, 0.5411765, 1)
+light_energy = 0.373
+sky_mode = 1

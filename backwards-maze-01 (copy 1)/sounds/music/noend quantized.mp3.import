@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dxpd2dtw16e70"
+path="res://.godot/imported/noend quantized.mp3-931cf31b595dffa563668ba093c98a00.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/noend quantized.mp3"
+dest_files=["res://.godot/imported/noend quantized.mp3-931cf31b595dffa563668ba093c98a00.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

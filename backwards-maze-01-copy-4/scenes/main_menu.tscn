@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cu1devkpcjqph"]
+
+[node name="MainMenu" type="Control" unique_id=1598567270]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -2.0
+offset_right = 24.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="." unique_id=1748003887]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -273.625
+offset_top = -57.0
+offset_right = 273.625
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"

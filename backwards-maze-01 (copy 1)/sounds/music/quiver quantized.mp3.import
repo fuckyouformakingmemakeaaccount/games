@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://vy1mk2mpu344"
+path="res://.godot/imported/quiver quantized.mp3-d3c07b5856f53d577af60d44457f3aa1.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/quiver quantized.mp3"
+dest_files=["res://.godot/imported/quiver quantized.mp3-d3c07b5856f53d577af60d44457f3aa1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
