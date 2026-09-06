@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://h3174422w576"]
 
 [ext_resource type="Script" uid="uid://dgf236k7rl3xf" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="AudioStream" uid="uid://vurlnu6vcntq" path="res://game jam game song.mp3" id="2_g2els"]
 
 [sub_resource type="Curve" id="Curve_f3sb7"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25589225, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 0), 0.0, 0.0, 0, 0]
@@ -28,3 +29,7 @@ light_energy = 0.373
 sky_mode = 1
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=892648184]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=5764385]
+stream = ExtResource("2_g2els")
+autoplay = true
